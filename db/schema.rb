@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130509200147) do
+ActiveRecord::Schema.define(version: 20130509201335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_sentinals", force: true do |t|
+    t.integer  "app_id"
+    t.integer  "sentinal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "app_sentinals", ["app_id"], name: "index_app_sentinals_on_app_id", using: :btree
+  add_index "app_sentinals", ["sentinal_id"], name: "index_app_sentinals_on_sentinal_id", using: :btree
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "results", force: true do |t|
     t.integer  "monitor_id"
