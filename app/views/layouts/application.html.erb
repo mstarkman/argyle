@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Argyle</title>
+  <%= stylesheet_link_tag    "libs", "/css/flat-ui.css", "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <%= link_to "Argyle", root_path, class: 'brand' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
