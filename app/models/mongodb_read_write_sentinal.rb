@@ -1,0 +1,2 @@
+class MongoDbReadWriteSentinal < Sentinal
+end
