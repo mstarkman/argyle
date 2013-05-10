@@ -7,6 +7,8 @@ class Modal
     @_modal().modal('hide')
 
   replaceForm: (formHtml) ->
+    console.log "food"
+    console.log @_modal().find(".modal-body form")
     @_modal().find(".modal-body form").replaceWith(formHtml)
 
   _addModalToDom: (html) ->

@@ -2,5 +2,5 @@
   window.Argyle.modal.close();
   $("#sentinal-list").replaceWith("<%= j render "sentinal_list", sentinals: @sentinals %>");
 <% else %>
-  window.Argyle.modal.replaceForm("<%=j render "new_form", sentinal: @sentinal %>");
+  window.Argyle.modal.replaceForm("<%=j render "new_#{@sentinal.type.underscore}_form", sentinal: @sentinal %>");
 <% end %>

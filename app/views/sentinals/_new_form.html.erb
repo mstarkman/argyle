@@ -5,7 +5,8 @@
                     options_from_collection_for_select(Sentinal.sentinal_list, 
                                                       :value, 
                                                       :display_name, 
-                                                      Sentinal.sentinal_struct_from_class_name(sentinal.type).value) %>
+                                                      Sentinal.sentinal_struct_from_class_name(sentinal.type).value),
+                    data: { remote: true, url: change_form_sentinals_path } %>
   </div>
 </div>
 
