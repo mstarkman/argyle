@@ -57,4 +57,9 @@ group :development do
   gem 'quiet_assets'
   gem 'pry-rails'
   gem 'foreman'
+  gem 'slim', '1.3.8'
+  gem 'sinatra'  
+
+  # Without version no. bundler barks about sass-rails and slim tilt dependency versions
+  gem 'tilt', "1.3.3"
 end
