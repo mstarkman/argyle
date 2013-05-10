@@ -1,3 +1,3 @@
 class Result < ActiveRecord::Base
-  belongs_to :monitor
+  belongs_to :sentinal
 end
