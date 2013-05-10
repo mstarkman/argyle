@@ -1,6 +1,8 @@
 class Sentinal < ActiveRecord::Base
   validates_presence_of :name
 
+  has_many :app_sentinals
+
   def run
   end
 
