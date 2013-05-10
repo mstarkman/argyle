@@ -1,0 +1,39 @@
+<div id="app_sentinals_modal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4>Manage Sentinals for <%= app.name %></h4>
+  </div>
+  <div class="modal-body">
+    <% sentinals.each do |sentinal| %>
+      <div class="row_fluid">
+        <div class="span12">
+          <label class=​"checkbox" for=​"sentinal_<%= sentinal.id %>">
+            <% 
+              checked = app.app_sentinals.where(sentinal_id: sentinal.id).exists? 
+              if checked
+                data_attrs = {
+                  remote: true,
+                  method: :delete,
+                  url: app_app_sentinal_path(app, app.app_sentinals.where(sentinal_id: sentinal.id).first)
+                }
+              else
+                data_attrs = {
+                  remote: true,
+                  method: :post,
+                  url: app_app_sentinals_path(app)
+                }
+              end
+            %>
+            <%= check_box_tag "sentinal_#{sentinal.id}", 
+                                1, 
+                                checked,
+                                data: data_attrs %> <%= sentinal.name %>
+          </label>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-success" data-cancel data-no-turbolink>Done</a>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="row status-refresh">
+  <div class="span9">
+    <h3>Current Status</h3>
+  </div>
+  <div class="span3">
+    <%= link_to status_index_path, class: "btn btn-large btn-block btn-primary pull-right", remote: true do %>
+      <i class="icon-refresh"></i> Refresh
+    <% end %>
+  </div>
+</div>
+
+<div class="row status-app-list">
+  <div class="span12">
+    <% @apps.each do |app| %>
+      <div class="row-fluid app">
+        <div class="span12">
+          <div class="row-fluid">
+            <div class="span12">
+              <h4><%= app.name %></h4>
+            </div>
+          </div>
+          <% app.sentinals.each do |sentinal| %>
+            <div class="row-fluid">
+              <div class="span1">
+                <p class="<%= sentinal.current_result.successful ? "success-result" : "fail-result" %>"><i class="icon-circle"></i></p>
+              </div>
+              <div class="span6">
+                <p><%= sentinal.name %></p>
+              </div>
+              <div class="span5">
+                <p>Last Run at <%= sentinal.current_result.run_at.localtime.to_formatted_s(:long) %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

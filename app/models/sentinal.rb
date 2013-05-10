@@ -1,7 +1,14 @@
 class Sentinal < ActiveRecord::Base
   validates_presence_of :name
 
+  has_many :app_sentinals
+  has_many :results
+
   def run
+  end
+
+  def current_result
+    @current_result ||= results.order("run_at desc").first
   end
 
   def self.sentinal_list

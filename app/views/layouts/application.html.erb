@@ -19,6 +19,9 @@
         <li class="<%= request[:controller] == "sentinals" ? "active" : "" %>">
           <%= link_to "Sentinals", sentinals_path %>
         </li>
+        <li class="<%= request[:controller] == "status" ? "active" : "" %>">
+          <%= link_to "Status", status_index_path %>
+        </li>
       </ul>
     </div>
   </div>
