@@ -16,7 +16,7 @@ class MongodbReadOnlySentinal < Sentinal
     db = mongo[self.database]
     collection = db[self.collection]
 
-    result = Result.where(sentinal_id: self.id).first_or_create
+    result = Result.where(sentinal_id: self.id).first_or_initialize
     result.run_at = Time.now
     result.successful = (collection.count == self.document_count)
     result.save
