@@ -1,0 +1,18 @@
+<%= div_for sentinal, class: "well sentinal" do %>
+  <div class="row-fluid">
+    <div class="span9">
+      <h4><%= sentinal.name %></h4>
+      <p><%= sentinal.description %></p>
+    </div>
+    <div class="span3">
+      <p class="pull-right"><%= Sentinal.sentinal_struct_from_class_name(sentinal.type).display_name %></p>
+      <%= link_to sentinal_path(sentinal), 
+                  class: "btn btn-mini btn-block btn-danger pull-right",
+                  remote: true, 
+                  method: :delete, 
+                  data: { confirm: "Are you sure you want to delete the #{sentinal.name} sentinal?" } do %>
+        <span class="fui-cross"></span> Delete
+      <% end %>
+    </div>
+  </div>
+<% end %>

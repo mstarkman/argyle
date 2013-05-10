@@ -1,0 +1,6 @@
+<%= simple_form_for sentinal, url: sentinals_path, html: { id: "new_sentinal" }, remote: true do |f| %>
+  <%= hidden_field_tag :sentinal_type_value, 0 %>
+  <%= f.input :name, placeholder: 'Sentinal name', input_html: { class: "span6" } %>
+  <%= f.input :description, placeholder: 'Sentinal description', input_html: { class: "span6" } %>
+<% end %>
+

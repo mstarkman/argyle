@@ -23,7 +23,7 @@ class AppsController < ApplicationController
 
   private
   def all_apps
-    App.all
+    App.all.order("upper(name)")
   end
 
   def app_params
