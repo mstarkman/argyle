@@ -1,2 +1,2 @@
-class MongoDbReadWriteSentinal < Sentinal
+class MongodbReadWriteSentinal < Sentinal
 end
