@@ -52,6 +52,10 @@ gem "simple_form", "~> 3.0.0.beta1"
 gem 'sidekiq'
 gem 'clockwork'
 
+# Sentinal dependencies
+gem 'mongo'
+gem 'bson_ext'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
