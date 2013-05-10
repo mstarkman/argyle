@@ -50,6 +50,7 @@ gem 'font-awesome-sass-rails'
 gem "simple_form", "~> 3.0.0.beta1"
 
 gem 'sidekiq'
+gem 'clockwork'
 
 group :development do
   gem 'better_errors'
