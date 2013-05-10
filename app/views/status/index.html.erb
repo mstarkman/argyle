@@ -20,15 +20,26 @@
             </div>
           </div>
           <% app.sentinals.each do |sentinal| %>
+            <%
+              current_result = sentinal.current_result
+
+              if current_result
+                status_class = current_result.successful ? "success-result" : "fail-result"
+                run_at_text = current_result.run_at.localtime.to_formatted_s(:long)
+              else
+                status_class = "no-result"
+                run_at_text = "Never run"
+              end
+            %>
             <div class="row-fluid">
               <div class="span1">
-                <p class="<%= sentinal.current_result.successful ? "success-result" : "fail-result" %>"><i class="icon-circle"></i></p>
+                <p class="<%= status_class %>"><i class="icon-circle"></i></p>
               </div>
               <div class="span6">
                 <p><%= sentinal.name %></p>
               </div>
               <div class="span5">
-                <p>Last Run at <%= sentinal.current_result.run_at.localtime.to_formatted_s(:long) %></p>
+                <p>Last Run at <%= run_at_text %></p>
               </div>
             </div>
           <% end %>
