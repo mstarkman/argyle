@@ -40,7 +40,7 @@ class SentinalsController < ApplicationController
 
     case params[:sentinal_type_value].to_i
     when 0 then params.require("MongodbReadOnlySentinal".underscore.to_sym).permit(:name, :description, :host, :port, :database, :collection, :document_count)
-    when 1 then params.require("MongodbReadWriteSentinal".underscore.to_sym).permit(:name, :description)
+    when 1 then params.require("MongodbReadWriteSentinal".underscore.to_sym).permit(:name, :description, :host, :port, :database)
     when 2 then params.require("S3ReadOnlySentinal".underscore.to_sym).permit(:name, :description)
     when 3 then params.require("S3ReadWriteSentinal".underscore.to_sym).permit(:name, :description)
     end
