@@ -1,0 +1,10 @@
+<div id="app-list" class="row app-list">
+  <div class="span12">
+    <% if apps.count == 0 %>
+      <h3>You don't have any apps configured, why do you create one?</h3>
+      <h1>Ryan<h1>
+    <% else %>
+      <%= render apps %>
+    <% end %>
+  </div>
+</div>
