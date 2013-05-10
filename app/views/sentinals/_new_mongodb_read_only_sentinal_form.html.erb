@@ -2,5 +2,10 @@
   <%= hidden_field_tag :sentinal_type_value, 0 %>
   <%= f.input :name, placeholder: 'Sentinal name', input_html: { class: "span6" } %>
   <%= f.input :description, placeholder: 'Sentinal description', input_html: { class: "span6" } %>
+  <%= f.input :host, input_html: { class: "span6" } %>
+  <%= f.input :port, input_html: { class: "span6" } %>
+  <%= f.input :database, input_html: { class: "span6" } %>
+  <%= f.input :collection, input_html: { class: "span6" } %>
+  <%= f.input :document_count, input_html: { class: "span6" } %>
 <% end %>
 

@@ -37,6 +37,12 @@ class SentinalsController < ApplicationController
 
   def sentinal_params
     sentinal_struct = Sentinal.sentinal_struct_from_value(params[:sentinal_type_value])
-    params.require(sentinal_struct.class_name.underscore.to_sym).permit(:name, :description)
+
+    case params[:sentinal_type_value].to_i
+    when 0 then params.require("MongodbReadOnlySentinal".underscore.to_sym).permit(:name, :description, :host, :port, :database, :collection, :document_count)
+    when 1 then params.require("MongodbReadWriteSentinal".underscore.to_sym).permit(:name, :description)
+    when 2 then params.require("S3ReadOnlySentinal".underscore.to_sym).permit(:name, :description)
+    when 3 then params.require("S3ReadWriteSentinal".underscore.to_sym).permit(:name, :description)
+    end
   end
 end
