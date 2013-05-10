@@ -1,2 +1,9 @@
-<h1>Sentinals#index</h1>
-<p>Find me in app/views/sentinals/index.html.erb</p>
+<div class="row sentinal-add">
+  <div class="span3 offset9">
+    <%= link_to new_sentinal_path, class: "btn btn-large btn-block btn-primary pull-right", remote: true do %>
+      <span class="fui-plus"></span> Add a Sentinal
+    <% end %>
+  </div>
+</div>
+
+<%= render "sentinal_list", sentinals: @sentinals %>

@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   respond_to :html, only: :index
-  respond_to :js, only: [:new, :create]
-
+  respond_to :js, only: [:new, :create, :destroy]
+  
   def index
     @apps = all_apps 
   end
