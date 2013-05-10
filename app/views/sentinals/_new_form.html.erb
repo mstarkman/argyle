@@ -1,4 +1,14 @@
-<%= simple_form_for sentinal, remote: true do |f| %>
-  <%= f.input :name, placeholder: 'Sentinal name', input_html: { class: "span6" } %>
-  <%= f.input :description, placeholder: 'Sentinal description', input_html: { class: "span6" } %>
-<% end %>
+<div class="control-group optional">
+  <label class="text optional control-label" for="sentinal_type">Type</label>
+  <div class="controls">
+    <%= select_tag :sentinal_type, 
+                    options_from_collection_for_select(Sentinal.sentinal_list, 
+                                                      :value, 
+                                                      :display_name, 
+                                                      Sentinal.sentinal_struct_from_class_name(sentinal.type).value),
+                    data: { remote: true, url: change_form_sentinals_path } %>
+  </div>
+</div>
+
+<%= render "new_#{sentinal.type.underscore}_form", sentinal: sentinal %>
+

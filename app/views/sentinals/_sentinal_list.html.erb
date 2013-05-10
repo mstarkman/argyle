@@ -11,7 +11,9 @@
           </div>
         </div>
     <% else %>
-      <%# render sentinals %>
+      <% sentinals.each do |sentinal| %>
+        <%= render "sentinal", sentinal: sentinal %>
+      <% end %>
     <% end %>
   </div>
 </div>
