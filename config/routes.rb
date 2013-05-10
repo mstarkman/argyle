@@ -1,4 +1,6 @@
 Argyle::Application.routes.draw do
+  resources :status, only: [:index]
+
   resources :apps do
     resources :app_sentinals, only: [:index, :create, :destroy]
   end
