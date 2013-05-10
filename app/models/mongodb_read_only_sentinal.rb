@@ -7,7 +7,7 @@ class MongodbReadOnlySentinal < Sentinal
   def run
     # Temporary until we hook up form -> database values 
     self.host = 'localhost'
-    self.port = '27017'
+    self.port = 27017
     self.database = 'sample-db'
     self.collection = 'test'
     self.document_count = 2
