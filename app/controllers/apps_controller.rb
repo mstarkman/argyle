@@ -15,6 +15,12 @@ class AppsController < ApplicationController
     @apps = all_apps
   end
 
+  def destroy
+    @app = App.find(params[:id])
+    @app.destroy
+    @apps = all_apps
+  end  
+
   private
   def all_apps
     App.all
