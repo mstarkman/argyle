@@ -1,0 +1,17 @@
+<%= div_for app, class: "well" do %>
+  <div class="row-fluid">
+    <div class="span10">
+      <h4><%= app.name %></h4>
+      <p><%= app.description %></p>
+    </div>
+    <div class="span2">
+      <%= link_to app, 
+                  class: "btn btn-mini btn-block btn-danger",
+                  remote: true, 
+                  method: :delete, 
+                  data: { confirm: "Are you sure you want to delete the #{app.name} app?" } do %>
+        <span class="fui-cross"></span> Delete
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div id="new_form_modal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4>Add an App</h4>
+  </div>
+  <div class="modal-body">
+    <%= render "new_form", app: app %>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-cancel data-no-turbolink>Cancel</a>
+    <button class="btn btn-primary" form="new_app">Add App</button>
+  </div>
+</div>

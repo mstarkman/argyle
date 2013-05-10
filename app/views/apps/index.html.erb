@@ -1,2 +1,9 @@
-<h1>Apps#index</h1>
-<p>Find me in app/views/apps/index.html.erb</p>
+<div class="row app-add">
+  <div class="span3 offset9">
+    <%= link_to new_app_path, class: "btn btn-large btn-block btn-primary pull-right", remote: true do %>
+      <span class="fui-plus"></span> Add an App
+    <% end %>
+  </div>
+</div>
+
+<%= render "app_list", apps: @apps %>

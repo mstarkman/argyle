@@ -1,0 +1,6 @@
+<% if @app.persisted? %>
+  window.Argyle.modal.close();
+  $("#app-list").replaceWith("<%= j render "app_list", apps: @apps %>");
+<% else %>
+  window.Argyle.modal.replaceForm("<%=j render "new_form", app: @app %>");
+<% end %>

@@ -47,7 +47,7 @@ end
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'font-awesome-sass-rails'
 
-gem 'simple_form'
+gem "simple_form", "~> 3.0.0.beta1"
 
 gem 'sidekiq'
 

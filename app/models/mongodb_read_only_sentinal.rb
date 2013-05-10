@@ -1,2 +1,2 @@
-class MongoDbReadOnlySentinal < Sentinal
+class MongodbReadOnlySentinal < Sentinal
 end
