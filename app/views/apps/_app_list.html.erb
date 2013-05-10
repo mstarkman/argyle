@@ -1,8 +1,15 @@
 <div id="app-list" class="row app-list">
   <div class="span12">
     <% if apps.count == 0 %>
-      <h3>You don't have any apps configured, why do you create one?</h3>
-      <h1>Ryan<h1>
+      <div class="row-fluid empty-state">
+        <div class="span11">
+          <h3>You don't have any apps configured, why do you create one?</h3>
+        </div>
+        <div class="span1">
+          <div class="cta">
+            <i class="icon-arrow-up"></i>
+          </div>
+        </div>
     <% else %>
       <%= render apps %>
     <% end %>
